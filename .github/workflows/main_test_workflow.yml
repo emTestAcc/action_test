@@ -29,4 +29,7 @@ jobs:
         run: ls
       - name: my step in the middel of the street 3
         shell: bash
-        run: ./action_test/create_image.sh
+        run: cd action_test
+      - name: my step in the middel of the street 4
+        shell: bash
+        run: ./create_image.sh

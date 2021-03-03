@@ -64,7 +64,7 @@ then
     exit 1
 fi
 
-mkdir $IMAGE_NAME
+mkdir -f $IMAGE_NAME
 docker build -t $IMAGE_NAME -f Dockerfile \
        --build-arg IMAGE_NAME=${IMAGE_NAME} \
        --no-cache \
