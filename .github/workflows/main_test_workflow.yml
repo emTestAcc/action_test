@@ -1,7 +1,7 @@
 on:
-  push:
-    branches:
-      - main
+push:
+branches:
+- main
 # for when updates to specific parts of the  project should not trigger an action:
 #paths-ignore:
 #    - 'docs/**'
@@ -9,6 +9,11 @@ on:
 
 jobs:
   job1:
-	runs-on: ubuntu-laetest
-	shell: bash
-	run: /create_image.sh
+    runs-on: ubuntu-latest
+    shell: bash
+    # Map a step output to a job output
+    outputs:
+      output1: ${{ steps.step1.outputs.test }}
+     steps:
+    - id: step1
+      run: /create_image.sh
