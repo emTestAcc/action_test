@@ -32,7 +32,7 @@ jobs:
         run: |
           cd action_test/
           ./create_image.sh
-       if: failure()
-       - name: something failed
-         shell: bash
-         run echo "oh shit"
+        if: failure()
+      - name: something failed
+        shell: bash
+        run: echo "oh shit"
