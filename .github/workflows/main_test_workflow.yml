@@ -1,5 +1,5 @@
 ---
-
+# WATCH OUT! This shit is super indentation-sensetive
 name: on-push workflow
 
 on:
@@ -34,5 +34,27 @@ jobs:
           ./create_image.sh
       - name: something failed
         shell: bash
-        run: echo "oh shit"
-        if: failure()
+        if: success()   # failure()
+        uses: dawidd6/action-send-mail@v2
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: tmpmail11223344@gmail.com
+          password: kamel094salt
+          subject: Something went wrong in the previous action
+          # Literal body:
+          body: Following is the output of log??
+          # Read file contents as body:
+          # body: file://README.md
+          to: flh@energymachines.com
+          from: tmpmail11223344@gmail.com
+          # Optional carbon copy recipients
+          # cc: kyloren@example.com,leia@example.com
+          # Optional blind carbon copy recipients
+          # bcc: r2d2@example.com,hansolo@example.com
+          # Optional content type (defaults to text/plain):
+          content_type: text/html
+          # Optional converting Markdown to HTML
+          convert_markdown: true
+          # Optional attachments:
+          # attachments: attachments.zip,git.diff,./dist/static/main.js
