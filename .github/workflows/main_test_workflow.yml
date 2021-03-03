@@ -21,6 +21,12 @@ jobs:
     #  output1: ${{ steps.step1.outputs.test }}
     steps:
       #- id: step1 --only one '-' pr step
-      - name: my step in the middel of the street
+      - name: my step in the middel of the street 1
         shell: bash
-        run: ./create_image.sh
+        run: git clone https://github.com/emTestAcc/action_test
+      - name: my step in the middel of the street 2
+        shell: bash
+        run: ls
+      - name: my step in the middel of the street 3
+        shell: bash
+        run: ./action_test/create_image.sh
