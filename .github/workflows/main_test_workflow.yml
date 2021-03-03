@@ -23,4 +23,4 @@ jobs:
       #- id: step1 --only one '-' pr step
       - name: my step in the middel of the street
         shell: bash
-        run: /create_image.sh
+        run: ./create_image.sh
