@@ -1,23 +1,25 @@
+---
+
 name: california-dreaming
 
 on:
   push:
     branches:
-    - main
+      - main
   workflow_dispatch:
-# for when updates to specific parts of the  project should not trigger an action:
-#paths-ignore:
-#    - 'docs/**'
+  # updates to specific parts of the  project should not trigger an action:
+  # paths-ignore:
+  #    - 'docs/**'
 
 
-jobs:
-  jobsjobsjobs:
-    runs-on: ubuntu-latest
-    shell: bash
-    # Map a step output to a job output
-    #outputs:
-    #  output1: ${{ steps.step1.outputs.test }}
-    steps:
-      - id: step1
-      - name: my step in the middel of the street
-      run: /create_image.sh
+  jobs:
+    jobsjobsjobs:
+      runs-on: ubuntu-latest
+      shell: bash
+      # Map a step output to a job output
+      #outputs:
+      #  output1: ${{ steps.step1.outputs.test }}
+      steps:
+        - id: step1
+        - name: my step in the middel of the street
+          run: /create_image.sh
