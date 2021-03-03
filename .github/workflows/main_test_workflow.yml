@@ -1,0 +1,14 @@
+on:
+  push:
+    branches:
+      - main
+# for when updates to specific parts of the  project should not trigger an action:
+#paths-ignore:
+#    - 'docs/**'
+
+
+jobs:
+  job1:
+	runs-on: ubuntu-laetest
+	shell: bash
+	run: /create_image.sh
