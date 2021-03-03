@@ -65,7 +65,7 @@ then
 fi
 
 mkdir $IMAGE_NAME
-docker build -t $IMAGE_NAME -f /home/runner/work/action_test/action_test/Dockerfile \
+docker build -t $IMAGE_NAME -f Dockerfile \
        --build-arg IMAGE_NAME=${IMAGE_NAME} \
        --no-cache \
        . 
