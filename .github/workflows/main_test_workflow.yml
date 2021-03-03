@@ -21,6 +21,6 @@ jobs:
     #outputs:
     #  output1: ${{ steps.step1.outputs.test }}
     steps:
-      - id: step1
+      #- id: step1 --only one '-' pr step
       - name: my step in the middel of the street
         run: /create_image.sh
