@@ -33,8 +33,6 @@ jobs:
           cd action_test/
           ./create_image.sh
       - name: something failed
-        shell: bash
-        if: success()   # failure()
         uses: dawidd6/action-send-mail@v2
         with:
           server_address: smtp.gmail.com
@@ -58,3 +56,4 @@ jobs:
           convert_markdown: true
           # Optional attachments:
           # attachments: attachments.zip,git.diff,./dist/static/main.js
+        if: success()   # failure()
