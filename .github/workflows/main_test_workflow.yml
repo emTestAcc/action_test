@@ -16,11 +16,11 @@ jobs:
   mytest:
     name: the mytest job
     runs-on: ubuntu-latest
-    shell: bash
     # Map a step output to a job output
     #outputs:
     #  output1: ${{ steps.step1.outputs.test }}
     steps:
       #- id: step1 --only one '-' pr step
       - name: my step in the middel of the street
+        shell: bash
         run: /create_image.sh
