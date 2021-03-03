@@ -13,21 +13,21 @@ on:
 
 
 jobs:
-  mytest:
-    name: the mytest job
+  build_test_img:
+    name: build the test-image
     runs-on: ubuntu-latest
     # Map a step output to a job output
-    #outputs:
+    # outputs:
     #  output1: ${{ steps.step1.outputs.test }}
     steps:
-      #- id: step1 --only one '-' pr step
-      - name: my step in the middel of the street 1
+      # - id: step1 --only one '-' pr step
+      - name: clone into /action_test
         shell: bash
         run: git clone https://github.com/emTestAcc/action_test
-      - name: my step in the middel of the street 2
+      - name: tmp test statement
         shell: bash
         run: ls
-      - name: my step in the middel of the street 3
+      - name: run create_image.sh
         shell: bash
         run: |
           cd action_test/
