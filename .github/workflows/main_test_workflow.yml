@@ -56,4 +56,22 @@ jobs:
           convert_markdown: true
           # Optional attachments:
           # attachments: attachments.zip,git.diff,./dist/static/main.js
-        if: success()   # failure()
+        if: failure()
+      - name: save image
+        run: |
+          mkdir docker_img
+          docker save em_img > docker_img/docker-image.tar
+      - uses: actions/upload-artifact@v2
+        with:
+          name: docker-artifact
+          path: docker_img
+  load_docker_img:
+    name: load pre_build image
+    runs-on: ubuntu-latest
+    needs: build_test_img
+    steps:
+      - name: Download Docker Image (Artifact)
+        uses: actions/download-artifact@v2
+        with:
+          name: docker-artifact
+          path: docker_img
