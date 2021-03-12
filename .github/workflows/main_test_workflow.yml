@@ -27,6 +27,9 @@ jobs:
       - name: tmp test statement
         shell: bash
         run: ls
+      - name: tmp test statement 2
+        shell: bash
+        run: ls ../../
       - name: run create_image.sh
         shell: bash
         run: |
